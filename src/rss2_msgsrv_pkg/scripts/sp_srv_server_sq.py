@@ -21,20 +21,17 @@ def callback(request):
 
 def square(time):
     s = 0
-    for s in range(3):
+    for s in range(4):
 	time_count=0
 	rospy.sleep(1)
 	while time_count <= time:
 		if time_count < time:
        			forward()
-		#elif time_count == time-1:
-    		#	stop()
 		else:
 			stop()
 			turn()
 			rospy.sleep(1)
 			stop()
-			print(vel)
 			rospy.sleep(1)
 
 		time_count += 1
@@ -58,9 +55,8 @@ def turn():
 
 def forward():
 	print("Forward")
-	print(vel)
 	vel.linear.x = 0.5
-	vel.linear.y = 0.5
+	vel.linear.y = 0
 	vel.angular.z = 0.000000000000
 	sp_pub.publish(vel)
 	rate.sleep()
