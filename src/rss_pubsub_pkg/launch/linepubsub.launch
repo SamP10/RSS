@@ -1,0 +1,4 @@
+<launch>
+<node name="line_sp_pub" pkg="rss_pubsub_pkg" type="samplant_publisher_line.py" output="screen"/>
+<node name="line_sp_sub" pkg="rss_pubsub_pkg" type="samplant_subscriber.py" output="screen"/>
+</launch>

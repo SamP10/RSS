@@ -1,0 +1,5 @@
+<launch>
+	<include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch"/>
+	<node name="sp_client_srv" pkg="rss2_msgsrv_pkg" type="sp_srv_server.py" output="screen" />
+	<node name="sp_server_srv" pkg="rss2_msgsrv_pkg" type="sp_srv_client.py" output="screen" />
+</launch>

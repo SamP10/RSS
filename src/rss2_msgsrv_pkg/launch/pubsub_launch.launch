@@ -1,0 +1,4 @@
+<launch>
+	<node name="sp_pub" pkg="rss2_msgsrv_pkg" type="msg_pub.py" output="screen" />
+        <node name="sp_sub" pkg="rss2_msgsrv_pkg" type="msg_sub.py" output="screen" />
+</launch>
