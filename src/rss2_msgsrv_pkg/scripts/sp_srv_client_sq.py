@@ -10,9 +10,14 @@ rospy.wait_for_service('/turtlebot_square_service')
 
 turtlebot_service_client = rospy.ServiceProxy('/turtlebot_square_service', turtlebot_move_square)
 
+print("Enter side length:")
+sL = input()
+print("Enter repetitions:")
+R = input()
+
 turtlebot_request_instance = turtlebot_move_squareRequest()
-turtlebot_request_instance.sideLength = 4
-turtlebot_request_instance.repetitions = 2
+turtlebot_request_instance.sideLength = sL
+turtlebot_request_instance.repetitions = R
 
 feedback = turtlebot_service_client(turtlebot_request_instance)
 
